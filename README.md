@@ -1,7 +1,3 @@
-Your Readme is Done 🎉🎉🎉
-Star This Project
-Fork on Github
-
 <h4 align="center">Olá! Meu nome é Luiz Fernando.🎓 Sou formado em Técnico em Análise e Desenvolvimento de Sistemas pelo SENAI.<br>💻 Tenho interesse em programação e desenvolvimento de software, sempre buscando aprender novas tecnologias e aprimorar minhas habilidades.<br>🎮 Tenho curiosidade e interesse em programação e criação de jogos, aprendendo tecnologias como Godot e outras engines.</h4>
 
 ###
@@ -31,14 +27,6 @@ Fork on Github
 </div>
 
 ###
-
-<div align="center">
-  <img src="https://img.shields.io/static/v1?message=LinkedIn&logo=linkedin&label=&color=0077B5&logoColor=white&labelColor=&style=for-the-badge" height="25" alt="linkedin logo"  />
-  <img src="https://img.shields.io/static/v1?message=Twitter&logo=twitter&label=&color=1DA1F2&logoColor=white&labelColor=&style=for-the-badge" height="25" alt="twitter logo"  />
-  <img src="https://img.shields.io/static/v1?message=Discord&logo=discord&label=&color=7289DA&logoColor=white&labelColor=&style=for-the-badge" height="25" alt="discord logo"  />
-  <img src="https://img.shields.io/static/v1?message=Twitch&logo=twitch&label=&color=9146FF&logoColor=white&labelColor=&style=for-the-badge" height="25" alt="twitch logo"  />
-  <img src="https://img.shields.io/static/v1?message=dev.to&logo=dev.to&label=&color=0A0A0A&logoColor=white&labelColor=&style=for-the-badge" height="25" alt="devto logo"  />
-</div>
 
 ###
 
