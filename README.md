@@ -1,6 +1,6 @@
 <br clear="both">
 
-<h3 align="left">Olá! Meu nome é Luiz Fernando. 🎓<br>Sou formado em Técnico em Análise e Desenvolvimento de Sistemas pelo SENAI e atualmente curso Ciência da Computação na SPTech.<br><br>💻 Tenho interesse em programação e desenvolvimento de software, sempre buscando aprender novas tecnologias e aprimorar minhas habilidades.<br><br>🎮 Também tenho curiosidade pela área de desenvolvimento de jogos, estudando ferramentas como Godot e outras engines.</h3>
+<h3 align="left">Olá! Meu nome é Luiz Fernando. 🎓<br>Sou formado em Técnico em Análise e Desenvolvimento de Sistemas pelo SENAI e atualmente curso Ciência da Computação na SPTech.<br><br>💻 Tenho interesse em programação e desenvolvimento de software, sempre buscando aprender novas tecnologias e aprimorar minhas habilidades.<br><br>🎮 Também tenho curiosidade pela área de desenvolvimento de jogos, estudando ferramentas como Unity e outras engines.</h3>
 
 ###
 
