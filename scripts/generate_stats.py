@@ -110,7 +110,9 @@ def get_contribution_statistics():
 
                 totalCommitContributions
 
-                totalContributions
+                contributionCalendar {
+                    totalContributions
+                }
 
             }
         }
@@ -152,6 +154,8 @@ def get_contribution_statistics():
         ],
 
         "contributions": contributions[
+            "contributionCalendar"
+        ][
             "totalContributions"
         ]
     }
