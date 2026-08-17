@@ -1,0 +1,167 @@
+<svg width="800" height="340"
+xmlns="http://www.w3.org/2000/svg">
+
+<rect width="800" height="340" rx="16"
+fill="#171717"
+stroke="#3b3b3b"/>
+
+<text x="40" y="50"
+font-family="Arial, sans-serif"
+font-size="24"
+font-weight="bold"
+fill="#ffffff">
+Most Used Languages
+</text>
+
+<text x="40" y="90"
+font-family="Arial, sans-serif"
+font-size="14"
+fill="#ffffff">
+HTML
+</text>
+
+<rect x="160" y="78"
+width="500" height="12"
+rx="6"
+fill="#292929"/>
+
+<rect x="160" y="78"
+width="291" height="12"
+rx="6"
+fill="#7c3aed"/>
+
+<text x="680" y="90"
+font-family="Arial, sans-serif"
+font-size="13"
+fill="#999999">
+58.2%
+</text>
+
+<text x="40" y="130"
+font-family="Arial, sans-serif"
+font-size="14"
+fill="#ffffff">
+JavaScript
+</text>
+
+<rect x="160" y="118"
+width="500" height="12"
+rx="6"
+fill="#292929"/>
+
+<rect x="160" y="118"
+width="103" height="12"
+rx="6"
+fill="#7c3aed"/>
+
+<text x="680" y="130"
+font-family="Arial, sans-serif"
+font-size="13"
+fill="#999999">
+20.6%
+</text>
+
+<text x="40" y="170"
+font-family="Arial, sans-serif"
+font-size="14"
+fill="#ffffff">
+CSS
+</text>
+
+<rect x="160" y="158"
+width="500" height="12"
+rx="6"
+fill="#292929"/>
+
+<rect x="160" y="158"
+width="52" height="12"
+rx="6"
+fill="#7c3aed"/>
+
+<text x="680" y="170"
+font-family="Arial, sans-serif"
+font-size="13"
+fill="#999999">
+10.5%
+</text>
+
+<text x="40" y="210"
+font-family="Arial, sans-serif"
+font-size="14"
+fill="#ffffff">
+Python
+</text>
+
+<rect x="160" y="198"
+width="500" height="12"
+rx="6"
+fill="#292929"/>
+
+<rect x="160" y="198"
+width="33" height="12"
+rx="6"
+fill="#7c3aed"/>
+
+<text x="680" y="210"
+font-family="Arial, sans-serif"
+font-size="13"
+fill="#999999">
+6.7%
+</text>
+
+<text x="40" y="250"
+font-family="Arial, sans-serif"
+font-size="14"
+fill="#ffffff">
+Java
+</text>
+
+<rect x="160" y="238"
+width="500" height="12"
+rx="6"
+fill="#292929"/>
+
+<rect x="160" y="238"
+width="13" height="12"
+rx="6"
+fill="#7c3aed"/>
+
+<text x="680" y="250"
+font-family="Arial, sans-serif"
+font-size="13"
+fill="#999999">
+2.7%
+</text>
+
+<text x="40" y="290"
+font-family="Arial, sans-serif"
+font-size="14"
+fill="#ffffff">
+C#
+</text>
+
+<rect x="160" y="278"
+width="500" height="12"
+rx="6"
+fill="#292929"/>
+
+<rect x="160" y="278"
+width="5" height="12"
+rx="6"
+fill="#7c3aed"/>
+
+<text x="680" y="290"
+font-family="Arial, sans-serif"
+font-size="13"
+fill="#999999">
+1.2%
+</text>
+
+<text x="40" y="315"
+font-family="Arial, sans-serif"
+font-size="12"
+fill="#777777">
+Based on repository language statistics
+</text>
+
+</svg>
