@@ -46,8 +46,7 @@ Sou formado em Técnico em Análise e Desenvolvimento de Sistemas pelo SENAI e a
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg" height="30" alt="R" />
   <img width="12" />
 
-  <img src="https://skillicons.dev/icons?i=rust" height="30" alt="Rust" />
-</div>
+  
 
 <h3 align="left">Desenvolvimento</h3>
 
