@@ -14,11 +14,20 @@ Sou formado em Técnico em Análise e Desenvolvimento de Sistemas pelo SENAI e a
 ###
 
 <div align="center">
-  <img src="./assets/stats.svg" height="150" alt="GitHub Statistics">
 
-  <img src="./assets/languages.svg" height="150" alt="Most Used Languages">
+  <img
+    src="https://github-readme-stats.vercel.app/api?username=LuizSptech&show_icons=true&include_all_commits=true&count_private=true&theme=dracula&hide_border=true"
+    width="420"
+    alt="GitHub Statistics"
+  />
+
+  <img
+    src="https://github-readme-stats.vercel.app/api/top-langs/?username=LuizSptech&layout=compact&langs_count=6&theme=dracula&hide_border=true"
+    width="360"
+    alt="Most Used Languages"
+  />
+
 </div>
-
 ###
 
 <h2 align="left">Tecnologias</h2>
