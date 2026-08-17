@@ -77,7 +77,7 @@ Sou formado em Técnico em Análise e Desenvolvimento de Sistemas pelo SENAI e a
 
 <h2 align="left">Projetos</h2>
 
-<h3>AcervoRPG</h3>
+### [AcervoRPG](https://github.com/LuizSptech/ACERVO-RPG)
 
 <p>
 Um projeto voltado para o universo de RPG, onde o usuário pode descobrir seu próprio estereótipo dentro do RPG e compartilhar momentos especiais vividos em histórias.
@@ -87,7 +87,7 @@ Um projeto voltado para o universo de RPG, onde o usuário pode descobrir seu pr
 <b>Tecnologias:</b> Node.js • MySQL • JavaScript • HTML • CSS
 </p>
 
-<h3>ArqCompJogo</h3>
+### [ArqComp_Jogo](https://github.com/LuizSptech/ArqComp_Jogo)
 
 <p>
 Um quiz de Arquitetura Computacional apresentado como um RPG de turnos, inspirado nos jogos clássicos de Pokémon.
