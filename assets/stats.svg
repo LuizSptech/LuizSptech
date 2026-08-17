@@ -1,0 +1,93 @@
+<svg width="800" height="300"
+xmlns="http://www.w3.org/2000/svg">
+
+<rect width="800" height="300" rx="16"
+fill="#171717"
+stroke="#3b3b3b"/>
+
+<text x="40" y="50"
+font-family="Arial, sans-serif"
+font-size="24"
+font-weight="bold"
+fill="#ffffff">
+GitHub Activity
+</text>
+
+<text x="40" y="75"
+font-family="Arial, sans-serif"
+font-size="13"
+fill="#999999">
+LuizSptech
+</text>
+
+<text x="80" y="135"
+font-family="Arial, sans-serif"
+font-size="28"
+font-weight="bold"
+fill="#ffffff">
+9
+</text>
+
+<text x="80" y="158"
+font-family="Arial, sans-serif"
+font-size="13"
+fill="#999999">
+Repositories
+</text>
+
+<text x="280" y="135"
+font-family="Arial, sans-serif"
+font-size="28"
+font-weight="bold"
+fill="#ffffff">
+9
+</text>
+
+<text x="280" y="158"
+font-family="Arial, sans-serif"
+font-size="13"
+fill="#999999">
+Commits
+</text>
+
+<text x="480" y="135"
+font-family="Arial, sans-serif"
+font-size="28"
+font-weight="bold"
+fill="#ffffff">
+2
+</text>
+
+<text x="480" y="158"
+font-family="Arial, sans-serif"
+font-size="13"
+fill="#999999">
+Stars
+</text>
+
+<text x="680" y="135"
+font-family="Arial, sans-serif"
+font-size="28"
+font-weight="bold"
+fill="#ffffff">
+0
+</text>
+
+<text x="680" y="158"
+font-family="Arial, sans-serif"
+font-size="13"
+fill="#999999">
+Forks
+</text>
+
+<line x1="40" y1="195" x2="760" y2="195"
+stroke="#333333"/>
+
+<text x="40" y="235"
+font-family="Arial, sans-serif"
+font-size="14"
+fill="#aaaaaa">
+Generated automatically by GitHub Actions
+</text>
+
+</svg>
