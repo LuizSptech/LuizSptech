@@ -1,93 +1,233 @@
-<svg width="800" height="300"
-xmlns="http://www.w3.org/2000/svg">
 
-<rect width="800" height="300" rx="16"
-fill="#171717"
-stroke="#3b3b3b"/>
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="800"
+    height="330"
+    viewBox="0 0 800 330"
+>
 
-<text x="40" y="50"
-font-family="Arial, sans-serif"
-font-size="24"
-font-weight="bold"
-fill="#ffffff">
+<style>
+
+.title {
+    font: 700 24px Arial;
+    fill: #ffffff;
+}
+
+.subtitle {
+    font: 400 13px Arial;
+    fill: #8b949e;
+}
+
+.label {
+    font: 600 14px Arial;
+    fill: #8b949e;
+}
+
+.value {
+    font: 700 25px Arial;
+    fill: #ffffff;
+}
+
+.card {
+    fill: #0d1117;
+    stroke: #30363d;
+    stroke-width: 1;
+}
+
+.divider {
+    stroke: #30363d;
+    stroke-width: 1;
+}
+
+</style>
+
+
+<rect
+    width="800"
+    height="330"
+    rx="15"
+    class="card"
+/>
+
+
+<!-- TITLE -->
+
+<text
+    x="35"
+    y="45"
+    class="title"
+>
 GitHub Activity
 </text>
 
-<text x="40" y="75"
-font-family="Arial, sans-serif"
-font-size="13"
-fill="#999999">
+
+<text
+    x="35"
+    y="68"
+    class="subtitle"
+>
 LuizSptech
 </text>
 
-<text x="80" y="135"
-font-family="Arial, sans-serif"
-font-size="28"
-font-weight="bold"
-fill="#ffffff">
+
+<!-- FIRST ROW -->
+
+<text
+    x="55"
+    y="115"
+    class="value"
+>
 9
 </text>
 
-<text x="80" y="158"
-font-family="Arial, sans-serif"
-font-size="13"
-fill="#999999">
+<text
+    x="55"
+    y="137"
+    class="label"
+>
 Repositories
 </text>
 
-<text x="280" y="135"
-font-family="Arial, sans-serif"
-font-size="28"
-font-weight="bold"
-fill="#ffffff">
-9
+
+<text
+    x="215"
+    y="115"
+    class="value"
+>
+277
 </text>
 
-<text x="280" y="158"
-font-family="Arial, sans-serif"
-font-size="13"
-fill="#999999">
+<text
+    x="215"
+    y="137"
+    class="label"
+>
 Commits
 </text>
 
-<text x="480" y="135"
-font-family="Arial, sans-serif"
-font-size="28"
-font-weight="bold"
-fill="#ffffff">
+
+<text
+    x="375"
+    y="115"
+    class="value"
+>
 2
 </text>
 
-<text x="480" y="158"
-font-family="Arial, sans-serif"
-font-size="13"
-fill="#999999">
+<text
+    x="375"
+    y="137"
+    class="label"
+>
 Stars
 </text>
 
-<text x="680" y="135"
-font-family="Arial, sans-serif"
-font-size="28"
-font-weight="bold"
-fill="#ffffff">
+
+<text
+    x="535"
+    y="115"
+    class="value"
+>
 0
 </text>
 
-<text x="680" y="158"
-font-family="Arial, sans-serif"
-font-size="13"
-fill="#999999">
+<text
+    x="535"
+    y="137"
+    class="label"
+>
 Forks
 </text>
 
-<line x1="40" y1="195" x2="760" y2="195"
-stroke="#333333"/>
 
-<text x="40" y="235"
-font-family="Arial, sans-serif"
-font-size="14"
-fill="#aaaaaa">
-Generated automatically by GitHub Actions
+<text
+    x="655"
+    y="115"
+    class="value"
+>
+288
 </text>
+
+<text
+    x="655"
+    y="137"
+    class="label"
+>
+Contributions
+</text>
+
+
+<!-- DIVIDER -->
+
+<line
+    x1="35"
+    y1="180"
+    x2="765"
+    y2="180"
+    class="divider"
+/>
+
+
+<!-- SECOND ROW -->
+
+<text
+    x="35"
+    y="220"
+    class="label"
+>
+Public Repositories
+</text>
+
+<text
+    x="35"
+    y="250"
+    class="value"
+>
+9
+</text>
+
+
+<text
+    x="250"
+    y="220"
+    class="label"
+>
+Followers
+</text>
+
+<text
+    x="250"
+    y="250"
+    class="value"
+>
+34
+</text>
+
+
+<text
+    x="465"
+    y="220"
+    class="label"
+>
+Following
+</text>
+
+<text
+    x="465"
+    y="250"
+    class="value"
+>
+47
+</text>
+
+
+<text
+    x="35"
+    y="295"
+    class="subtitle"
+>
+Updated automatically through GitHub Actions
+</text>
+
 
 </svg>
