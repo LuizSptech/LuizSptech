@@ -17,9 +17,9 @@ Sou formado em Técnico em Análise e Desenvolvimento de Sistemas pelo SENAI e a
 
 
 
-  <img src="./assets/stats.svg" width="420" alt="GitHub Statistics">
+  <img src="./assets/stats.svg" width="780" alt="GitHub Statistics">
 
-  <img src="./assets/languages.svg" width="360" alt="Most Used Languages">
+  <img src="./assets/languages.svg" width="500" alt="Most Used Languages">
 
 </div>
 
