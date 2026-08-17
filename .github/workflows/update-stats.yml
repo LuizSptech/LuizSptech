@@ -10,40 +10,35 @@ permissions:
   contents: write
 
 jobs:
-  update-stats:
-
+  generate-stats:
     runs-on: ubuntu-latest
 
     steps:
-
       - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.12"
+          python-version: "3.x"
+
+      - name: Install dependencies
+        run: |
+          pip install requests
 
       - name: Generate statistics
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_USERNAME: LuizSptech
         run: |
           python scripts/generate_stats.py
 
-      - name: Commit statistics
+      - name: Commit generated files
         run: |
-
           git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git config user.email \
-            "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/stats.svg assets/languages.svg
 
-          git add assets/
+          git diff --cached --quiet || git commit -m "chore: update GitHub statistics"
 
-          if git diff --cached --quiet; then
-            echo "No changes to commit."
-          else
-            git commit -m "chore: update GitHub statistics"
-            git push
-          fi
+          git push

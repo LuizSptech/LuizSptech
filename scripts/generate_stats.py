@@ -1,337 +1,264 @@
 import os
-import json
-import urllib.request
+import requests
 from collections import Counter
-from pathlib import Path
+from xml.sax.saxutils import escape
 
+USERNAME = "LuizSptech"
+TOKEN = os.environ.get("GITHUB_TOKEN")
 
-USERNAME = os.getenv("GITHUB_USERNAME", "LuizSptech")
-TOKEN = os.getenv("GITHUB_TOKEN")
+HEADERS = {
+    "Authorization": f"Bearer {TOKEN}",
+    "Accept": "application/vnd.github+json"
+}
 
-API_URL = "https://api.github.com"
-
-ASSETS_DIR = Path("assets")
-ASSETS_DIR.mkdir(exist_ok=True)
-
-
-def github_request(endpoint):
-    url = f"{API_URL}{endpoint}"
-
-    headers = {
-        "Accept": "application/vnd.github+json",
-        "User-Agent": USERNAME,
-    }
-
-    if TOKEN:
-        headers["Authorization"] = f"Bearer {TOKEN}"
-
-    request = urllib.request.Request(url, headers=headers)
-
-    with urllib.request.urlopen(request) as response:
-        return json.loads(response.read().decode())
+API = "https://api.github.com"
 
 
 def get_repositories():
-    repositories = []
+    repos = []
     page = 1
 
     while True:
-        data = github_request(
-            f"/users/{USERNAME}/repos?per_page=100&page={page}"
+        response = requests.get(
+            f"{API}/users/{USERNAME}/repos",
+            headers=HEADERS,
+            params={
+                "per_page": 100,
+                "page": page,
+                "type": "owner"
+            }
         )
+
+        response.raise_for_status()
+        data = response.json()
 
         if not data:
             break
 
-        repositories.extend(data)
-
-        if len(data) < 100:
-            break
-
+        repos.extend(data)
         page += 1
 
-    return repositories
+    return repos
 
 
-def get_commit_count(repository):
-    owner = repository["owner"]["login"]
-    name = repository["name"]
-
-    try:
-        data = github_request(
-            f"/repos/{owner}/{name}/commits?per_page=1"
-        )
-
-        # O GitHub fornece o total através do header Link,
-        # mas para manter o script simples e estável,
-        # usamos a quantidade retornada quando disponível.
-        return len(data)
-
-    except Exception:
-        return 0
-
-
-def get_languages(repository):
-    owner = repository["owner"]["login"]
-    name = repository["name"]
-
-    try:
-        return github_request(
-            f"/repos/{owner}/{name}/languages"
-        )
-    except Exception:
-        return {}
-
-
-def calculate_statistics(repositories):
-    total_repositories = len(repositories)
-
-    total_stars = sum(
-        repository["stargazers_count"]
-        for repository in repositories
-    )
-
-    total_forks = sum(
-        repository["forks_count"]
-        for repository in repositories
-    )
-
-    total_commits = 0
-
+def get_languages(repos):
     languages = Counter()
 
-    for repository in repositories:
-        total_commits += get_commit_count(repository)
+    for repo in repos:
+        response = requests.get(
+            repo["languages_url"],
+            headers=HEADERS
+        )
 
-        repo_languages = get_languages(repository)
+        if response.status_code == 200:
+            data = response.json()
 
-        for language, amount in repo_languages.items():
-            languages[language] += amount
+            for language, bytes_count in data.items():
+                languages[language] += bytes_count
 
-    return {
-        "repositories": total_repositories,
-        "commits": total_commits,
-        "stars": total_stars,
-        "forks": total_forks,
-        "languages": languages,
-    }
+    return languages
 
 
-def escape_svg(text):
-    return (
-        str(text)
-        .replace("&", "&amp;")
-        .replace("<", "&lt;")
-        .replace(">", "&gt;")
-        .replace('"', "&quot;")
-        .replace("'", "&apos;")
+def create_stats_svg(repos):
+    total_repos = len(repos)
+
+    stars = sum(repo["stargazers_count"] for repo in repos)
+
+    forks = sum(repo["forks_count"] for repo in repos)
+
+    followers_response = requests.get(
+        f"{API}/users/{USERNAME}",
+        headers=HEADERS
     )
 
+    followers_response.raise_for_status()
+    user = followers_response.json()
 
-def create_stats_svg(stats):
-    repositories = stats["repositories"]
-    commits = stats["commits"]
-    stars = stats["stars"]
-    forks = stats["forks"]
+    followers = user["followers"]
 
-    svg = f"""<svg width="800" height="300"
-xmlns="http://www.w3.org/2000/svg">
+    total_size = sum(repo["size"] for repo in repos)
 
-<rect width="800" height="300" rx="16"
-fill="#171717"
-stroke="#3b3b3b"/>
+    public_repos = user["public_repos"]
 
-<text x="40" y="50"
-font-family="Arial, sans-serif"
-font-size="24"
-font-weight="bold"
-fill="#ffffff">
-GitHub Activity
+    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="700" height="330" viewBox="0 0 700 330">
+
+<style>
+.title {{
+    font: 700 24px Arial;
+    fill: #ffffff;
+}}
+
+.label {{
+    font: 600 16px Arial;
+    fill: #8b949e;
+}}
+
+.value {{
+    font: 700 22px Arial;
+    fill: #ffffff;
+}}
+
+.card {{
+    fill: #0d1117;
+    stroke: #30363d;
+    stroke-width: 1;
+}}
+</style>
+
+<rect width="700" height="330" rx="15" class="card"/>
+
+<text x="35" y="45" class="title">
+GitHub Statistics
 </text>
 
-<text x="40" y="75"
-font-family="Arial, sans-serif"
-font-size="13"
-fill="#999999">
-LuizSptech
-</text>
-
-<text x="80" y="135"
-font-family="Arial, sans-serif"
-font-size="28"
-font-weight="bold"
-fill="#ffffff">
-{repositories}
-</text>
-
-<text x="80" y="158"
-font-family="Arial, sans-serif"
-font-size="13"
-fill="#999999">
+<text x="35" y="95" class="label">
 Repositories
 </text>
 
-<text x="280" y="135"
-font-family="Arial, sans-serif"
-font-size="28"
-font-weight="bold"
-fill="#ffffff">
-{commits}
+<text x="35" y="125" class="value">
+{total_repos}
 </text>
 
-<text x="280" y="158"
-font-family="Arial, sans-serif"
-font-size="13"
-fill="#999999">
-Commits
+<text x="250" y="95" class="label">
+Public Repositories
 </text>
 
-<text x="480" y="135"
-font-family="Arial, sans-serif"
-font-size="28"
-font-weight="bold"
-fill="#ffffff">
-{stars}
+<text x="250" y="125" class="value">
+{public_repos}
 </text>
 
-<text x="480" y="158"
-font-family="Arial, sans-serif"
-font-size="13"
-fill="#999999">
+<text x="500" y="95" class="label">
+Followers
+</text>
+
+<text x="500" y="125" class="value">
+{followers}
+</text>
+
+<text x="35" y="180" class="label">
 Stars
 </text>
 
-<text x="680" y="135"
-font-family="Arial, sans-serif"
-font-size="28"
-font-weight="bold"
-fill="#ffffff">
-{forks}
+<text x="35" y="210" class="value">
+{stars}
 </text>
 
-<text x="680" y="158"
-font-family="Arial, sans-serif"
-font-size="13"
-fill="#999999">
+<text x="250" y="180" class="label">
 Forks
 </text>
 
-<line x1="40" y1="195" x2="760" y2="195"
-stroke="#333333"/>
+<text x="250" y="210" class="value">
+{forks}
+</text>
 
-<text x="40" y="235"
-font-family="Arial, sans-serif"
-font-size="14"
-fill="#aaaaaa">
-Generated automatically by GitHub Actions
+<text x="500" y="180" class="label">
+Repository Size
+</text>
+
+<text x="500" y="210" class="value">
+{total_size} KB
+</text>
+
+<text x="35" y="275" class="label">
+Updated automatically through GitHub Actions
 </text>
 
 </svg>
 """
 
-    (ASSETS_DIR / "stats.svg").write_text(
-        svg,
-        encoding="utf-8"
-    )
+    os.makedirs("assets", exist_ok=True)
+
+    with open("assets/stats.svg", "w", encoding="utf-8") as file:
+        file.write(svg)
 
 
-def create_languages_svg(stats):
-    languages = stats["languages"]
-
-    top_languages = languages.most_common(6)
-
+def create_languages_svg(languages):
     total = sum(languages.values())
 
-    width = 800
-    height = 340
+    if total == 0:
+        return
 
-    svg = f"""<svg width="{width}" height="{height}"
-xmlns="http://www.w3.org/2000/svg">
+    top_languages = languages.most_common(8)
 
-<rect width="{width}" height="{height}" rx="16"
-fill="#171717"
-stroke="#3b3b3b"/>
+    rows = []
 
-<text x="40" y="50"
-font-family="Arial, sans-serif"
-font-size="24"
-font-weight="bold"
-fill="#ffffff">
-Most Used Languages
-</text>
-"""
-
-    y = 90
+    y = 75
 
     for language, amount in top_languages:
-        percentage = (amount / total * 100) if total else 0
+        percentage = amount / total * 100
 
-        bar_width = int(500 * percentage / 100)
+        rows.append(
+            f"""
+            <text x="30" y="{y}" class="label">
+                {escape(language)}
+            </text>
 
-        svg += f"""
-<text x="40" y="{y}"
-font-family="Arial, sans-serif"
-font-size="14"
-fill="#ffffff">
-{escape_svg(language)}
+            <text x="390" y="{y}" class="value">
+                {percentage:.1f}%
+            </text>
+            """
+        )
+
+        y += 35
+
+    height = 100 + len(top_languages) * 35
+
+    svg = f"""<svg xmlns="http://www.w3.org/2000/svg"
+width="500"
+height="{height}"
+viewBox="0 0 500 {height}">
+
+<style>
+.label {{
+    font: 600 16px Arial;
+    fill: #8b949e;
+}}
+
+.value {{
+    font: 700 16px Arial;
+    fill: #ffffff;
+}}
+
+.card {{
+    fill: #0d1117;
+    stroke: #30363d;
+    stroke-width: 1;
+}}
+
+.title {{
+    font: 700 22px Arial;
+    fill: #ffffff;
+}}
+</style>
+
+<rect width="500" height="{height}" rx="15" class="card"/>
+
+<text x="30" y="38" class="title">
+Most Used Languages
 </text>
 
-<rect x="160" y="{y - 12}"
-width="500" height="12"
-rx="6"
-fill="#292929"/>
-
-<rect x="160" y="{y - 12}"
-width="{bar_width}" height="12"
-rx="6"
-fill="#7c3aed"/>
-
-<text x="680" y="{y}"
-font-family="Arial, sans-serif"
-font-size="13"
-fill="#999999">
-{percentage:.1f}%
-</text>
-"""
-
-        y += 40
-
-    svg += """
-<text x="40" y="315"
-font-family="Arial, sans-serif"
-font-size="12"
-fill="#777777">
-Based on repository language statistics
-</text>
+{''.join(rows)}
 
 </svg>
 """
 
-    (ASSETS_DIR / "languages.svg").write_text(
-        svg,
-        encoding="utf-8"
-    )
+    with open("assets/languages.svg", "w", encoding="utf-8") as file:
+        file.write(svg)
 
 
 def main():
-    print(f"Collecting GitHub data for {USERNAME}...")
+    if not TOKEN:
+        raise RuntimeError("GITHUB_TOKEN não encontrado.")
 
-    repositories = get_repositories()
+    repos = get_repositories()
 
-    print(f"Repositories found: {len(repositories)}")
+    languages = get_languages(repos)
 
-    statistics = calculate_statistics(repositories)
+    create_stats_svg(repos)
 
-    print("Statistics:")
-    print(f"Repositories: {statistics['repositories']}")
-    print(f"Commits: {statistics['commits']}")
-    print(f"Stars: {statistics['stars']}")
-    print(f"Forks: {statistics['forks']}")
+    create_languages_svg(languages)
 
-    create_stats_svg(statistics)
-    create_languages_svg(statistics)
-
-    print("SVG files generated successfully.")
+    print("SVGs gerados com sucesso.")
 
 
 if __name__ == "__main__":
