@@ -366,23 +366,9 @@ Contributions
     y="220"
     class="label"
 >
-Public Repositories
-</text>
-
-<text
-    x="35"
-    y="250"
-    class="value"
->
-{user["public_repos"]}
-</text>
 
 
-<text
-    x="250"
-    y="220"
-    class="label"
->
+
 Followers
 </text>
 
