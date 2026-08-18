@@ -94,7 +94,7 @@ Repositories
     y="115"
     class="value"
 >
-277
+281
 </text>
 
 <text
@@ -145,7 +145,7 @@ Forks
     y="115"
     class="value"
 >
-288
+292
 </text>
 
 <text
@@ -175,23 +175,9 @@ Contributions
     y="220"
     class="label"
 >
-Public Repositories
-</text>
-
-<text
-    x="35"
-    y="250"
-    class="value"
->
-9
-</text>
 
 
-<text
-    x="250"
-    y="220"
-    class="label"
->
+
 Followers
 </text>
 
