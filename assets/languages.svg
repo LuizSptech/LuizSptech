@@ -70,7 +70,7 @@ HTML
 <rect
     x="120"
     y="72"
-    width="170"
+    width="148"
     height="10"
     rx="5"
     fill="#8b5cf6"
@@ -81,80 +81,12 @@ HTML
     y="85"
     class="percentage"
 >
-53.3%
+46.4%
 </text>
 
 <text
     x="30"
     y="130"
-    class="label"
->
-JavaScript
-</text>
-
-<rect
-    x="120"
-    y="117"
-    width="320"
-    height="10"
-    rx="5"
-    fill="#21262d"
-/>
-
-<rect
-    x="120"
-    y="117"
-    width="60"
-    height="10"
-    rx="5"
-    fill="#8b5cf6"
-/>
-
-<text
-    x="455"
-    y="130"
-    class="percentage"
->
-18.9%
-</text>
-
-<text
-    x="30"
-    y="175"
-    class="label"
->
-CSS
-</text>
-
-<rect
-    x="120"
-    y="162"
-    width="320"
-    height="10"
-    rx="5"
-    fill="#21262d"
-/>
-
-<rect
-    x="120"
-    y="162"
-    width="30"
-    height="10"
-    rx="5"
-    fill="#8b5cf6"
-/>
-
-<text
-    x="455"
-    y="175"
-    class="percentage"
->
-9.6%
-</text>
-
-<text
-    x="30"
-    y="220"
     class="label"
 >
 Java
@@ -162,6 +94,74 @@ Java
 
 <rect
     x="120"
+    y="117"
+    width="320"
+    height="10"
+    rx="5"
+    fill="#21262d"
+/>
+
+<rect
+    x="120"
+    y="117"
+    width="67"
+    height="10"
+    rx="5"
+    fill="#8b5cf6"
+/>
+
+<text
+    x="455"
+    y="130"
+    class="percentage"
+>
+21.2%
+</text>
+
+<text
+    x="30"
+    y="175"
+    class="label"
+>
+JavaScript
+</text>
+
+<rect
+    x="120"
+    y="162"
+    width="320"
+    height="10"
+    rx="5"
+    fill="#21262d"
+/>
+
+<rect
+    x="120"
+    y="162"
+    width="52"
+    height="10"
+    rx="5"
+    fill="#8b5cf6"
+/>
+
+<text
+    x="455"
+    y="175"
+    class="percentage"
+>
+16.5%
+</text>
+
+<text
+    x="30"
+    y="220"
+    class="label"
+>
+CSS
+</text>
+
+<rect
+    x="120"
     y="207"
     width="320"
     height="10"
@@ -172,7 +172,7 @@ Java
 <rect
     x="120"
     y="207"
-    width="30"
+    width="26"
     height="10"
     rx="5"
     fill="#8b5cf6"
@@ -183,7 +183,7 @@ Java
     y="220"
     class="percentage"
 >
-9.5%
+8.4%
 </text>
 
 <text
@@ -206,7 +206,7 @@ Python
 <rect
     x="120"
     y="252"
-    width="24"
+    width="21"
     height="10"
     rx="5"
     fill="#8b5cf6"
@@ -217,7 +217,7 @@ Python
     y="265"
     class="percentage"
 >
-7.6%
+6.6%
 </text>
 
 <text
@@ -251,7 +251,7 @@ C#
     y="310"
     class="percentage"
 >
-1.1%
+0.9%
 </text>
 
 
