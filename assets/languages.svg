@@ -70,7 +70,7 @@ HTML
 <rect
     x="120"
     y="72"
-    width="146"
+    width="145"
     height="10"
     rx="5"
     fill="#8b5cf6"
@@ -81,7 +81,7 @@ HTML
     y="85"
     class="percentage"
 >
-45.8%
+45.6%
 </text>
 
 <text
@@ -104,7 +104,7 @@ Java
 <rect
     x="120"
     y="117"
-    width="69"
+    width="70"
     height="10"
     rx="5"
     fill="#8b5cf6"
@@ -115,7 +115,7 @@ Java
     y="130"
     class="percentage"
 >
-21.8%
+22.2%
 </text>
 
 <text
@@ -183,7 +183,7 @@ CSS
     y="220"
     class="percentage"
 >
-8.3%
+8.2%
 </text>
 
 <text
