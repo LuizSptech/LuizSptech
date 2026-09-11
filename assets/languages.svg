@@ -70,7 +70,7 @@ HTML
 <rect
     x="120"
     y="72"
-    width="124"
+    width="123"
     height="10"
     rx="5"
     fill="#8b5cf6"
@@ -81,7 +81,7 @@ HTML
     y="85"
     class="percentage"
 >
-38.8%
+38.6%
 </text>
 
 <text
@@ -183,7 +183,7 @@ CSS
     y="220"
     class="percentage"
 >
-7.0%
+6.9%
 </text>
 
 <text
@@ -217,7 +217,7 @@ Python
     y="265"
     class="percentage"
 >
-5.8%
+5.7%
 </text>
 
 <text
