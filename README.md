@@ -6,7 +6,7 @@
 
 <h3 align="left">
 Olá! Meu nome é Luiz Fernando. 🎓<br><br>
-Sou formado em Técnico em Análise e Desenvolvimento de Sistemas pelo SENAI e atualmente curso Ciência da Computação na SPTech.<br><br>
+Sou formado em Técnico de ADS pelo SENAI e atualmente curso Ciência da Computação na SPTech.<br><br>
 💻 Desenvolvedor de Software, sempre buscando aprender novas tecnologias e aprimorar minhas habilidades.<br><br>
 🎮 Também tenho interesse em desenvolvimento de jogos, estudando tecnologias como Unity e C#.
 </h3>
