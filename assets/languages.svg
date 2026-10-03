@@ -81,7 +81,7 @@ Java
     y="85"
     class="percentage"
 >
-47.4%
+47.2%
 </text>
 
 <text
@@ -240,7 +240,7 @@ R
 <rect
     x="120"
     y="297"
-    width="3"
+    width="4"
     height="10"
     rx="5"
     fill="#8b5cf6"
@@ -251,7 +251,7 @@ R
     y="310"
     class="percentage"
 >
-1.2%
+1.3%
 </text>
 
 
