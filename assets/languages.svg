@@ -81,7 +81,7 @@ Java
     y="85"
     class="percentage"
 >
-53.0%
+52.8%
 </text>
 
 <text
@@ -115,7 +115,7 @@ HTML
     y="130"
     class="percentage"
 >
-26.4%
+26.3%
 </text>
 
 <text
@@ -149,7 +149,7 @@ JavaScript
     y="175"
     class="percentage"
 >
-9.4%
+9.3%
 </text>
 
 <text
@@ -183,7 +183,7 @@ CSS
     y="220"
     class="percentage"
 >
-4.8%
+4.7%
 </text>
 
 <text
@@ -240,7 +240,7 @@ R
 <rect
     x="120"
     y="297"
-    width="3"
+    width="4"
     height="10"
     rx="5"
     fill="#8b5cf6"
@@ -251,7 +251,7 @@ R
     y="310"
     class="percentage"
 >
-1.1%
+1.4%
 </text>
 
 
