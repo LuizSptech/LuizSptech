@@ -70,7 +70,7 @@ Java
 <rect
     x="120"
     y="72"
-    width="242"
+    width="241"
     height="10"
     rx="5"
     fill="#8b5cf6"
@@ -81,7 +81,7 @@ Java
     y="85"
     class="percentage"
 >
-75.8%
+75.5%
 </text>
 
 <text
@@ -104,7 +104,7 @@ HTML
 <rect
     x="120"
     y="117"
-    width="41"
+    width="42"
     height="10"
     rx="5"
     fill="#8b5cf6"
@@ -115,7 +115,7 @@ HTML
     y="130"
     class="percentage"
 >
-13.0%
+13.2%
 </text>
 
 <text
@@ -149,7 +149,7 @@ JavaScript
     y="175"
     class="percentage"
 >
-5.1%
+5.2%
 </text>
 
 <text
@@ -217,7 +217,7 @@ Python
     y="265"
     class="percentage"
 >
-2.3%
+2.4%
 </text>
 
 <text
